@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Launch countdown timer</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/index.js" defer></script>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="countdown-container">
+            <div class="countdown  countdown-days">
+                <div class="digit" data-digit-before="0" data-digit-after="1">
+                    <!--before-->
+                    <div class="card">
+                        <div class="card-face card-face-front">0</div>
+                        <div class="card-face card-face-back">1</div>
+                    </div>
+                    <!--after-->
+                </div>
+            </div>
+            <div class="countdown  countdown-hours">
+                <div class="digit" data-digit-before="0" data-digit-after="1">
+                    <!--before-->
+                    <div class="card">
+                        <div class="card-face card-face-front">0</div>
+                        <div class="card-face card-face-back">1</div>
+                    </div>
+                    <!--after-->
+                </div>
+            </div>
+            <div class="countdown  countdown-minutes">
+                <div class="digit" data-digit-before="3" data-digit-after="3">
+                    <!--before-->
+                    <div class="card">
+                        <div class="card-face card-face-front">3</div>
+                        <div class="card-face card-face-back">3</div>
+                    </div>
+                    <!--after-->
+                </div>
+            </div>
+            <div class="countdown  countdown-seconds">
+                <div class="digit s" data-digit-before="0" data-digit-after="1">
+                    <!--before-->
+                    <div class="card s">
+                        <div class="card-face card-face-front">0</div>
+                        <div class="card-face card-face-back">1</div>
+                    </div>
+                    <!--after-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
+    </div>
+</body>
+
+</html>
