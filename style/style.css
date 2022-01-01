@@ -69,6 +69,14 @@ body {
           perspective: 1000px;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  /* remove the persepective on firefox only due to a bug in the browser rendering with perspective and preseve 3d*/
+}
+
+@supports (-moz-appearance: none) {
+  .countdown .digit {
+    -webkit-perspective: none;
+            perspective: none;
+  }
 }
 
 .digit::before {
@@ -135,12 +143,14 @@ body {
   overflow: hidden;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  will-change: transform;
 }
 
 .card.active {
   -webkit-transform: rotateX(-180deg);
           transform: rotateX(-180deg);
   -moz-transform: rotateX(-180deg);
+  /*   box-shadow: 10px 0px 10px #000; */
 }
 
 .card-face-front {

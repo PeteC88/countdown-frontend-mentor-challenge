@@ -9,7 +9,7 @@ function setEl(type) {
 
     //timer
     let now = new Date().getTime();
-    let endDate = new Date("January 01, 2022 00:00:00");
+    let endDate = new Date("January 02, 2022 00:00:00");
     let diff = endDate - now;
 
     let s = 1000;
@@ -113,8 +113,7 @@ function countdown() {
 }
 
 countdown();
-/*
+
 setInterval(() => {
     countdown();
 }, 1000);
- */
