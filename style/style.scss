@@ -13,6 +13,7 @@ $neutral-colors: (
   dark-desaturated-blue: hsl(236, 21%, 26%),
   very-dark-blue: hsl(235, 16%, 14%),
   darkest-blue: hsl(234, 17%, 12%),
+  dark-violet: #1f1d2a,
 );
 
 *,
@@ -23,24 +24,49 @@ $neutral-colors: (
   box-sizing: border-box;
 }
 body {
-  height: 100vh;
   font-size: 14px;
   font-family: "Red Hat Text", sans-serif;
-  background-color: map-get($neutral-colors, very-dark-blue);
+
+  background: linear-gradient(
+    map-get($neutral-colors, darkest-blue),
+    map-get($neutral-colors, darkest-blue),
+    map-get($neutral-colors, dark-desaturated-blue)
+  );
+}
+
+.stars-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
 }
 .app {
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 220px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.header-text {
+  position: relative;
+  top: 5%;
+  width: 90%;
+  font-size: 1.4rem;
+  letter-spacing: 5px;
+  margin-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
 }
 
 .countdown-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  width: 100%;
+  font-size: 40px;
   line-height: 0;
 }
 
@@ -48,25 +74,31 @@ body {
   user-select: none;
   cursor: default;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .countdown {
   display: flex;
-  margin-right: 1rem;
+  flex-wrap: wrap;
+  position: relative;
 
-  &:last-child {
-    margin-right: 0;
+  &-time-text {
+    font-size: 8px;
+    color: map-get($primary-colors, grayish-blue);
+    line-height: normal;
+    padding-top: 5px;
+    text-transform: uppercase;
   }
-
   .digit {
     position: relative;
-
     width: 70px;
-    height: 45px;
+    height: 70px;
 
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
     perspective: 1000px;
     backface-visibility: hidden;
+    color: map-get($primary-colors, soft-red);
 
     /* remove the persepective on firefox only due to a bug in the browser rendering with perspective and preseve 3d*/
     @supports (-moz-appearance: none) {
@@ -79,14 +111,20 @@ body {
   content: attr(data-digit-before);
   bottom: 0;
   align-items: flex-start;
-  background-color: white;
+  background-color: #34364f;
+
+  padding-left: 1.2px;
+
+  @supports (-moz-appearance: none) {
+    padding-left: 0;
+  }
 }
 .digit::after {
   content: attr(data-digit-after);
+  background-color: #2c2c44;
+  color: #d3506f;
   top: 0;
   align-items: flex-end;
-  background-color: white;
-  /* background-color: black; */
 }
 
 .digit::before,
@@ -114,6 +152,28 @@ body {
   transform: rotateX(0);
 
   transition: transform 0.7s ease-in-out;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 32.5px;
+    left: 0;
+    z-index: 2;
+    width: 2.2px;
+    height: 5px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: black;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 32.5px;
+    z-index: 2;
+    width: 2.5px;
+    height: 5px;
+    border-radius: 5px 0px 0px 5px;
+    background-color: black;
+  }
 }
 
 .card-face {
@@ -128,6 +188,7 @@ body {
 
   backface-visibility: hidden;
   will-change: transform;
+  color: map-get($primary-colors, soft-red);
 }
 
 .card.active {
@@ -139,27 +200,36 @@ body {
 .card-face-front {
   align-items: flex-end;
   background-color: white;
-  color: black;
+  background-color: #2c2c44;
+  color: #d3506f;
 }
 
 .card-face-back {
   align-items: flex-start;
   transform: rotateX(180deg);
   -moz-transform: rotateX(-180deg);
-  background-color: white;
-  color: black;
+  background-color: #34364f;
 }
 
 .digit::before,
 .card-face-back {
-  border-top: 1px solid black;
-
-  @supports (-moz-appearance: none) {
-    border-top: 0 solid black;
-  }
+  border-radius: 0 0 8px 8px;
 }
 
 .digit::after,
 .card-face-front {
-  border-bottom: 1px solid black;
+  border-radius: 8px 8px 0 0;
+}
+
+.bottom-img {
+  width: 100%;
+  position: relative;
+  bottom: -20px;
+  overflow: hidden;
+
+  & img {
+    object-fit: scale-down;
+    transform: translateX(-60%);
+    background-color: transparent;
+  }
 }
