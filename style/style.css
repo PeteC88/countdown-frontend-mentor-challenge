@@ -50,6 +50,7 @@ body {
       -ms-user-select: none;
           user-select: none;
   cursor: default;
+  width: 100%;
 }
 
 .countdown {
@@ -59,10 +60,14 @@ body {
   margin-right: 1rem;
 }
 
+.countdown:last-child {
+  margin-right: 0;
+}
+
 .countdown .digit {
   position: relative;
-  width: 80px;
-  height: 60px;
+  width: 70px;
+  height: 45px;
   -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
   -webkit-perspective: 1000px;
@@ -174,11 +179,18 @@ body {
 
 .digit::before,
 .card-face-back {
-  border-top: 0.5px solid black;
+  border-top: 1px solid black;
+}
+
+@supports (-moz-appearance: none) {
+  .digit::before,
+  .card-face-back {
+    border-top: 0 solid black;
+  }
 }
 
 .digit::after,
 .card-face-front {
-  border-bottom: 0.5px solid black;
+  border-bottom: 1px solid black;
 }
 /*# sourceMappingURL=style.css.map */
