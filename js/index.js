@@ -9,14 +9,23 @@ function setEl(type) {
 
     //timer
     let now = new Date().getTime();
-    let endDate = new Date("January 02, 2022 11:30:00");
-    let diff = endDate - now;
+    let endDate = new Date("January 17, 2022 00:00:00");
+    let diff = endDate.getTime() - now;
 
+
+    //get seconds, minutes, hours and days in milliseconds
     let s = 1000;
     let m = s * 60;
     let h = m * 60;
     let d = h * 24;
 
+    //Check if the countdown is over and reset de countdown to 8 days
+    if (diff < 0) {
+        return
+
+    }
+
+    //get seconds, minutes, hours and days
     let days = Math.floor(diff / d);
     let hours = Math.floor((diff % d) / h);
     let minutes = Math.floor((diff % h) / m);
@@ -24,12 +33,6 @@ function setEl(type) {
 
 
     let curr = null;
-
-
-    //Check if the countdown is over
-    if (diff < 0) {
-        return
-    }
 
     if (type === "seconds") {
         curr = seconds;
@@ -61,6 +64,9 @@ function setEl(type) {
 
     if (curr === 0) {
         if (type === "hours") {
+            flipNode.digit.dataset.digitAfter = 7;
+        }
+        else if (type === "hours") {
             flipNode.digit.dataset.digitAfter = 23;
         } else {
             flipNode.digit.dataset.digitAfter = 59;
@@ -103,6 +109,12 @@ function setEl(type) {
         flipNode.cardFaceBack.innerText = flipNode.digit.dataset.digitAfter;
 
     });
+}
+
+function addDays(originalDate, days) {
+    cloneDate = new Date(originalDate.valueOf());
+    cloneDate.setDate(cloneDate.getDate() + days);
+    return cloneDate;
 }
 
 function countdown() {
