@@ -16,8 +16,8 @@ ul {
 body {
   font-size: 14px;
   font-family: "Red Hat Text", sans-serif;
-  background: -webkit-gradient(linear, left top, left bottom, from(#191a24), color-stop(#191a24), to(#343650));
-  background: linear-gradient(#191a24, #191a24, #343650);
+  background: -webkit-gradient(linear, left top, left bottom, from(#191a24), to(#343650));
+  background: linear-gradient(#191a24, #343650);
 }
 
 .stars-background {
