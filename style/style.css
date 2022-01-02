@@ -9,6 +9,10 @@
           box-sizing: border-box;
 }
 
+ul {
+  list-style-type: none;
+}
+
 body {
   font-size: 14px;
   font-family: "Red Hat Text", sans-serif;
@@ -43,7 +47,7 @@ body {
 
 .header-text {
   position: relative;
-  top: 5%;
+  top: -40px;
   width: 90%;
   font-size: 1.4rem;
   letter-spacing: 5px;
@@ -66,6 +70,18 @@ body {
   width: 100%;
   font-size: 40px;
   line-height: 0;
+}
+
+@media (min-width: 600px) {
+  .countdown-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .countdown-container {
+    width: 50%;
+  }
 }
 
 .countdown-container * {
@@ -92,19 +108,26 @@ body {
 }
 
 .countdown-time-text {
-  font-size: 8px;
+  font-size: 0.5rem;
   color: #8486a9;
   line-height: normal;
   padding-top: 5px;
   text-transform: uppercase;
 }
 
+@media (min-width: 600px) {
+  .countdown-time-text {
+    font-size: 1.2rem;
+  }
+}
+
 .countdown .digit {
   position: relative;
   width: 70px;
   height: 70px;
-  -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 5px 0px 0px black;
+          box-shadow: 0 5px 0px 0px black;
+  border-radius: 8px 8px 8px 8px;
   -webkit-perspective: 1000px;
           perspective: 1000px;
   -webkit-backface-visibility: hidden;
@@ -117,6 +140,13 @@ body {
   .countdown .digit {
     -webkit-perspective: none;
             perspective: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .countdown .digit {
+    width: 140px;
+    height: 140px;
   }
 }
 
@@ -161,6 +191,13 @@ body {
   overflow: hidden;
 }
 
+@media (min-width: 600px) {
+  .digit::before,
+  .digit::after {
+    font-size: 4rem;
+  }
+}
+
 .card {
   position: relative;
   z-index: 1;
@@ -178,28 +215,37 @@ body {
   transition: transform 0.7s ease-in-out, -webkit-transform 0.7s ease-in-out;
 }
 
-.card::before {
+.card .bullet {
+  width: 100%;
+}
+
+.card::before, .card::after {
   content: "";
   position: absolute;
   top: 32.5px;
-  left: 0;
-  z-index: 2;
+  z-index: 5;
   width: 2.2px;
   height: 5px;
-  border-radius: 0px 5px 5px 0px;
   background-color: black;
+}
+
+@media (min-width: 600px) {
+  .card::before, .card::after {
+    top: 65px;
+    width: 4.4px;
+    height: 10px;
+  }
+}
+
+.card::before {
+  left: 0;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .card::after {
   content: "";
-  position: absolute;
   right: 0;
-  top: 32.5px;
-  z-index: 2;
-  width: 2.5px;
-  height: 5px;
   border-radius: 5px 0px 0px 5px;
-  background-color: black;
 }
 
 .card-face {
@@ -217,6 +263,12 @@ body {
           backface-visibility: hidden;
   will-change: transform;
   color: #fb6087;
+}
+
+@media (min-width: 600px) {
+  .card-face {
+    font-size: 4rem;
+  }
 }
 
 .card.active {
@@ -262,11 +314,70 @@ body {
   overflow: hidden;
 }
 
+@media (min-width: 1440px) {
+  .bottom-img {
+    overflow: auto;
+    bottom: -30px;
+  }
+}
+
 .bottom-img img {
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
-  -webkit-transform: translateX(-60%);
-          transform: translateX(-60%);
   background-color: transparent;
+  -webkit-transform: translateX(-55%);
+          transform: translateX(-55%);
+}
+
+@media (min-width: 600px) {
+  .bottom-img img {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@media (min-width: 1440px) {
+  .bottom-img img {
+    -webkit-transform: scaleX(1.8);
+            transform: scaleX(1.8);
+    height: 200px;
+  }
+}
+
+.footer-social {
+  width: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  bottom: 50px;
+}
+
+.footer-social li {
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.footer-social li svg path:hover {
+  fill: #fb6087;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  background-color: transparent;
+  color: lightgray;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  z-index: 10;
+}
+
+.attribution a {
+  color: #3e52a3;
 }
 /*# sourceMappingURL=style.css.map */
