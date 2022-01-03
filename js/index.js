@@ -36,9 +36,10 @@ function setEl(type) {
 
     if (type === "seconds") {
         curr = seconds;
-        if (days !== 0 || hours !== 0 || minutes !== 0) {
+        flipNode.card.classList.add("active");
+        /* if (days !== 0 || hours !== 0 || minutes !== 0) {
             flipNode.card.classList.add("active");
-        }
+        } */
     } else if (type === "minutes") {
         curr = minutes;
         if (seconds === 0) {
