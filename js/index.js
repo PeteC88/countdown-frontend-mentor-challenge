@@ -105,7 +105,7 @@ function setEl(type) {
         flipNode.digit.dataset.digitAfter = (curr - 1) < 10 ? "0" + (curr - 1) : curr - 1;
         flipNode.cardFaceBack.innerText = flipNode.digit.dataset.digitAfter;
 
-    });
+    }, { once: true });
 }
 
 function addDays(originalDate, days) {
