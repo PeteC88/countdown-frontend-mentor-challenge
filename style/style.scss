@@ -133,7 +133,7 @@ body {
     box-shadow: 0 5px 0px 0px black;
     border-radius: 8px 8px 8px 8px;
 
-    perspective: 1000px;
+    /* perspective: 1000px; */
     backface-visibility: hidden;
     color: map-get($primary-colors, soft-red);
 
