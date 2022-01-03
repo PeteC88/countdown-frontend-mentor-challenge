@@ -64,9 +64,6 @@ function setEl(type) {
 
     if (curr === 0) {
         if (type === "hours") {
-            flipNode.digit.dataset.digitAfter = 7;
-        }
-        else if (type === "hours") {
             flipNode.digit.dataset.digitAfter = 23;
         } else {
             flipNode.digit.dataset.digitAfter = 59;
