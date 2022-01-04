@@ -114,17 +114,15 @@ function addDays(originalDate, days) {
     return cloneDate;
 }
 
-(function countdown() {
+function countdown() {
     setEl("seconds");
     setEl("minutes");
     setEl("hours");
     setEl("days");
+}
 
-    setTimeout(countdown, 1000)
-})();
+countdown();
 
-
-/* setInterval(() => {
+setInterval(() => {
     countdown();
 }, 1000);
- */
