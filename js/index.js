@@ -1,7 +1,3 @@
-let now;
-let endDate;
-let diff;
-
 function setEl(type) {
     let flipNode = document.querySelector(`.countdown-${type}`);
     flipNode.card = flipNode.querySelector(".card");
@@ -12,9 +8,9 @@ function setEl(type) {
 
 
     //timer
-    now = new Date().getTime();
-    endDate = new Date("January 17, 2022 00:00:00");
-    diff = endDate.getTime() - now;
+    let now = new Date().getTime();
+    let endDate = new Date("January 17, 2022 00:00:00");
+    let diff = endDate.getTime() - now;
 
 
     //get seconds, minutes, hours and days in milliseconds
@@ -129,4 +125,4 @@ countdown();
 
 setInterval(() => {
     countdown();
-}, 1000);
+}, 2000);
