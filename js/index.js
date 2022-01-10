@@ -125,4 +125,4 @@ countdown();
 
 setInterval(() => {
     countdown();
-}, 2000);
+}, 3000);
