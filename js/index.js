@@ -36,7 +36,7 @@ function setEl(type) {
 
     if (type === "seconds") {
         curr = seconds;
-        if (days !== 0 || hours !== 0 || minutes !== 0) {
+        if (diff > 0) {
             flipNode.card.classList.add("active");
         }
     } else if (type === "minutes") {
