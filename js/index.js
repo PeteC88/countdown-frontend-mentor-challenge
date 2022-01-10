@@ -36,27 +36,27 @@ function setEl(type) {
 
     if (type === "seconds") {
         curr = seconds;
-       /*  if (days !== 0 || hours !== 0 || minutes !== 0) {
+        if (days !== 0 || hours !== 0 || minutes !== 0) {
             flipNode.card.classList.add("active");
-        } */
+        }
     } else if (type === "minutes") {
         curr = minutes;
-        /* if (seconds === 0) {
+        if (seconds === 0) {
             if (days !== 0 || hours !== 0) {
                 flipNode.card.classList.add("active");
             }
-        } */
+        }
     } else if (type === "hours") {
         curr = hours;
-       /*  if (minutes === 0 && seconds === 0) {
+        if (minutes === 0 && seconds === 0) {
 
             flipNode.card.classList.add("active");
-        } */
+        }
     } else if (type === "days") {
         curr = days;
-      /*   if (hours === 0 && minutes === 0 && seconds === 0) {
+        if (hours === 0 && minutes === 0 && seconds === 0) {
             flipNode.card.classList.add("active");
-        } */
+        }
     }
 
     flipNode.digit.dataset.digitBefore = curr < 10 ? "0" + curr : curr;
@@ -106,28 +106,6 @@ function setEl(type) {
         flipNode.cardFaceBack.innerText = flipNode.digit.dataset.digitAfter;
 
     }, { once: true });
-    if(!flipNode.card.classList.contains("active")){
-        if (type === "seconds") {
-            if (days !== 0 || hours !== 0 || minutes !== 0) {
-                flipNode.card.classList.add("active");
-            }
-        } else if (type === "minutes") {
-            if (seconds === 0) {
-                if (days !== 0 || hours !== 0) {
-                    flipNode.card.classList.add("active");
-                }
-            }
-        } else if (type === "hours") {
-            if (minutes === 0 && seconds === 0) {
-    
-                flipNode.card.classList.add("active");
-            }
-        } else if (type === "days") {
-            if (hours === 0 && minutes === 0 && seconds === 0) {
-                flipNode.card.classList.add("active");
-            }
-        }
-    }
 }
 
 function addDays(originalDate, days) {
