@@ -37,6 +37,7 @@ function setEl(type) {
     if (type === "seconds") {
         curr = seconds;
         if (diff > 0) {
+            //the timeout add the class after 300 ms, in order to avoid an issue with transitionend on chrome and Safari
             setTimeout(()=>{
                 flipNode.card.classList.add("active");
             },300)
