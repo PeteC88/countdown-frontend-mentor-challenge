@@ -37,7 +37,10 @@ function setEl(type) {
     if (type === "seconds") {
         curr = seconds;
         if (diff > 0) {
-            flipNode.card.classList.add("active");
+            setTimeout(()=>{
+                flipNode.card.classList.add("active");
+            },300)
+            
         }
     } else if (type === "minutes") {
         curr = minutes;
