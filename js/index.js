@@ -75,7 +75,7 @@ function setEl(type) {
     }
 
     flipNode.card.addEventListener("transitionend", function () {
-
+        console.log("transitionend fired");
         if (curr === 0) {
             if (type === "hours") {
                 flipNode.digit.dataset.digitBefore = 23;
