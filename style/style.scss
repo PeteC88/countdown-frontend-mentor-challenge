@@ -68,6 +68,7 @@ body {
 .app {
   width: 100%;
   height: calc(100vh - 220px);
+  padding-top: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,18 +78,23 @@ body {
 .header-text {
   position: relative;
   width: 90%;
-  font-size: 1.4rem;
+  font-size: 1rem;
   letter-spacing: 5px;
+  top: 15px;
   margin-bottom: 50px;
   text-align: center;
   text-transform: uppercase;
   color: white;
-
+  /* 
   @include for-tablet-up() {
-    top: 0;
-    width: 90%;
-    font-size: 1rem;
+    font-size: 1.4rem;
+  } */
+  @include for-desktop-up() {
+    font-size: 1.6rem;
   }
+  /*   @include for-small-desktop() {
+    font-size: 1.4;
+  } */
 }
 
 .countdown-container {

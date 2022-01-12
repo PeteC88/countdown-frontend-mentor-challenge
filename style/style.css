@@ -32,6 +32,7 @@ body {
 .app {
   width: 100%;
   height: calc(100vh - 220px);
+  padding-top: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,19 +51,25 @@ body {
 .header-text {
   position: relative;
   width: 90%;
-  font-size: 1.4rem;
+  font-size: 1rem;
   letter-spacing: 5px;
+  top: 15px;
   margin-bottom: 50px;
   text-align: center;
   text-transform: uppercase;
   color: white;
+  /* 
+  @include for-tablet-up() {
+    font-size: 1.4rem;
+  } */
+  /*   @include for-small-desktop() {
+    font-size: 1.4;
+  } */
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1440px) {
   .header-text {
-    top: 0;
-    width: 90%;
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 
