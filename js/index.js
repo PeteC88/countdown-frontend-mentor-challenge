@@ -31,35 +31,37 @@ function setEl(type) {
     let minutes = Math.floor((diff % h) / m);
     let seconds = Math.floor((diff % m) / s);
 
+    function addActiveClassWithDelay(){
+        //the timeout add the class after 300 ms, in order to avoid an issue with transitionend on chrome and Safari
+        setTimeout(()=>{
+            flipNode.card.classList.add("active");
+        },100)
+    }
 
     let curr = null;
 
     if (type === "seconds") {
         curr = seconds;
         if (diff > 0) {
-            //the timeout add the class after 300 ms, in order to avoid an issue with transitionend on chrome and Safari
-            setTimeout(()=>{
-                flipNode.card.classList.add("active");
-            },300)
+            addActiveClassWithDelay();
             
         }
     } else if (type === "minutes") {
         curr = minutes;
         if (seconds === 0) {
             if (days !== 0 || hours !== 0) {
-                flipNode.card.classList.add("active");
+                addActiveClassWithDelay();
             }
         }
     } else if (type === "hours") {
         curr = hours;
         if (minutes === 0 && seconds === 0) {
-
-            flipNode.card.classList.add("active");
+            addActiveClassWithDelay();
         }
     } else if (type === "days") {
         curr = days;
         if (hours === 0 && minutes === 0 && seconds === 0) {
-            flipNode.card.classList.add("active");
+            addActiveClassWithDelay();
         }
     }
 
