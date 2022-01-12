@@ -5,7 +5,8 @@
 ::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ul {
@@ -15,6 +16,7 @@ ul {
 body {
   font-size: 14px;
   font-family: "Red Hat Text", sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, from(#191a24), to(#343650));
   background: linear-gradient(#191a24, #343650);
 }
 
@@ -30,10 +32,19 @@ body {
 .app {
   width: 100%;
   height: calc(100vh - 220px);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .header-text {
@@ -56,9 +67,15 @@ body {
 }
 
 .countdown-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   font-size: 40px;
   line-height: 0;
@@ -77,16 +94,25 @@ body {
 }
 
 .countdown-container * {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: default;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .countdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   position: relative;
 }
 
@@ -114,10 +140,13 @@ body {
   position: relative;
   width: 70px;
   height: 70px;
-  box-shadow: 0 5px 0px 0px black;
+  -webkit-box-shadow: 0 5px 0px 0px black;
+          box-shadow: 0 5px 0px 0px black;
   border-radius: 8px 8px 8px 8px;
-  perspective: 1000px;
-  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   color: #fb6087;
   /* remove the persepective on firefox only due to a bug in the browser rendering with perspective and preseve 3d*/
   /*  @supports (-moz-appearance: none) {
@@ -142,7 +171,9 @@ body {
 .digit::before {
   content: attr(data-digit-before);
   bottom: 0;
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   background-color: #34364f;
   padding-left: 1.2px;
 }
@@ -158,15 +189,21 @@ body {
   background-color: #2c2c44;
   color: #d3506f;
   top: 0;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .digit::before,
 .digit::after {
   position: absolute;
   z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 50%;
   overflow: hidden;
@@ -191,10 +228,16 @@ body {
   z-index: 1;
   width: 100%;
   height: 50%;
-  transform-style: preserve-3d;
-  transform-origin: bottom;
-  transform: rotateX(0);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+  -webkit-transition: -webkit-transform 0.7s ease-in-out;
+  transition: -webkit-transform 0.7s ease-in-out;
   transition: transform 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out, -webkit-transform 0.7s ease-in-out;
 }
 
 .card .bullet {
@@ -240,12 +283,17 @@ body {
 
 .card-face {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   will-change: transform;
   color: #fb6087;
 }
@@ -263,20 +311,26 @@ body {
 }
 
 .card.active {
-  transform: rotateX(-180deg);
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
   -moz-transform: rotateX(-180deg);
 }
 
 .card-face-front {
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   background-color: white;
   background-color: #2c2c44;
   color: #d3506f;
 }
 
 .card-face-back {
-  align-items: flex-start;
-  transform: rotateX(180deg);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
   -moz-transform: rotateX(-180deg);
   background-color: #34364f;
 }
@@ -305,9 +359,15 @@ body {
 .footer-social {
   width: 100%;
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   bottom: 50px;
 }
 
