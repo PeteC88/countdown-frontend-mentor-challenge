@@ -62,7 +62,7 @@ body {
   height: 100%;
   position: absolute;
   overflow: hidden;
-  background-image: url('/images/bg-stars.svg');
+  background-image: url("../images/bg-stars.svg");
   background-repeat: repeat;
 }
 .app {
@@ -84,7 +84,7 @@ body {
   text-transform: uppercase;
   color: white;
 
-  @include for-tablet-up(){
+  @include for-tablet-up() {
     top: 0;
     width: 90%;
     font-size: 1rem;
@@ -134,7 +134,6 @@ body {
     @include for-desktop-up() {
       font-size: 1.2rem;
     }
-    
   }
 
   .digit {
@@ -150,7 +149,7 @@ body {
     color: map-get($primary-colors, soft-red);
 
     /* remove the persepective on firefox only due to a bug in the browser rendering with perspective and preseve 3d*/
-   /*  @supports (-moz-appearance: none) {
+    /*  @supports (-moz-appearance: none) {
       perspective: none;
     } */
 
@@ -159,7 +158,7 @@ body {
       height: 100px;
     }
 
-    @include for-desktop-up(){
+    @include for-desktop-up() {
       width: 140px;
       height: 140px;
     }
@@ -202,7 +201,7 @@ body {
     font-size: 3rem;
   }
 
-  @include for-desktop-up(){
+  @include for-desktop-up() {
     font-size: 4rem;
   }
 }
@@ -237,8 +236,8 @@ body {
       width: 4.4px;
       height: 10px;
     }
-  
-    @include for-desktop-up(){
+
+    @include for-desktop-up() {
       top: 65px;
       width: 4.4px;
       height: 10px;
@@ -274,7 +273,7 @@ body {
     font-size: 3rem;
   }
 
-  @include for-desktop-up(){
+  @include for-desktop-up() {
     font-size: 4rem;
   }
 }
@@ -314,10 +313,9 @@ body {
   position: relative;
   bottom: -70px;
   overflow: hidden;
-  background-image: url("/images/pattern-hills.svg");
+  background-image: url("../images/pattern-hills.svg");
   background-repeat: repeat-x;
   background-size: 100% 100%;
-  
 }
 
 .footer-social {
