@@ -62,6 +62,8 @@ body {
   height: 100%;
   position: absolute;
   overflow: hidden;
+  background-image: url('/images/bg-stars.svg');
+  background-repeat: repeat;
 }
 .app {
   width: 100%;
@@ -82,6 +84,12 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: white;
+
+  @include for-tablet-up(){
+    top: 0;
+    width: 90%;
+    font-size: 1rem;
+  }
 }
 
 .countdown-container {
@@ -117,12 +125,17 @@ body {
     font-size: 0.5rem;
     color: map-get($primary-colors, grayish-blue);
     line-height: normal;
-    padding-top: 5px;
+    padding-top: 10px;
     text-transform: uppercase;
 
     @include for-tablet-up() {
+      font-size: 0.9rem;
+    }
+
+    @include for-desktop-up() {
       font-size: 1.2rem;
     }
+    
   }
 
   .digit {
@@ -138,11 +151,16 @@ body {
     color: map-get($primary-colors, soft-red);
 
     /* remove the persepective on firefox only due to a bug in the browser rendering with perspective and preseve 3d*/
-    @supports (-moz-appearance: none) {
+   /*  @supports (-moz-appearance: none) {
       perspective: none;
-    }
+    } */
 
     @include for-tablet-up() {
+      width: 100px;
+      height: 100px;
+    }
+
+    @include for-desktop-up(){
       width: 140px;
       height: 140px;
     }
@@ -182,6 +200,10 @@ body {
 
   overflow: hidden;
   @include for-tablet-up() {
+    font-size: 3rem;
+  }
+
+  @include for-desktop-up(){
     font-size: 4rem;
   }
 }
@@ -196,7 +218,7 @@ body {
   transform-origin: bottom;
   transform: rotateX(0);
 
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.7s ease-in-out;
 
   .bullet {
     width: 100%;
@@ -212,6 +234,12 @@ body {
     background-color: black;
 
     @include for-tablet-up() {
+      top: 45px;
+      width: 4.4px;
+      height: 10px;
+    }
+  
+    @include for-desktop-up(){
       top: 65px;
       width: 4.4px;
       height: 10px;
@@ -244,6 +272,10 @@ body {
   color: map-get($primary-colors, soft-red);
 
   @include for-tablet-up() {
+    font-size: 3rem;
+  }
+
+  @include for-desktop-up(){
     font-size: 4rem;
   }
 }
@@ -251,7 +283,6 @@ body {
 .card.active {
   transform: rotateX(-180deg);
   -moz-transform: rotateX(-180deg);
-  /*   box-shadow: 10px 0px 10px #000; */
 }
 
 .card-face-front {
@@ -280,27 +311,15 @@ body {
 
 .bottom-img {
   width: 100%;
+  height: 150px;
   position: relative;
-  bottom: -20px;
+  bottom: -70px;
   overflow: hidden;
-  @include for-desktop-up() {
-    overflow: auto;
-    bottom: -30px;
-  }
+  background-image: url("/images/pattern-hills.svg");
+  background-repeat: repeat-x;
+  background-size: 100% 100%;
+  
 
-  & img {
-    background-color: transparent;
-    transform: translateX(-55%);
-
-    @include for-tablet-up() {
-      transform: translateX(0);
-    }
-
-    @include for-desktop-up() {
-      transform: scaleX(1.8);
-      height: 200px;
-    }
-  }
 }
 
 .footer-social {
@@ -322,6 +341,7 @@ body {
 }
 
 .attribution {
+  position: absolute;
   font-size: 11px;
   text-align: center;
   background-color: transparent;
@@ -329,7 +349,7 @@ body {
   position: absolute;
   width: 100%;
   height: 5px;
-  z-index: 10;
+  bottom: 10px;
 }
 
 .attribution a {
