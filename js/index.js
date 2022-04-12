@@ -9,7 +9,7 @@ function setEl(type) {
 
     //timer
     let now = new Date().getTime();
-    let endDate = new Date("June 16, 2022 00:00:00");
+    let endDate = new Date("July 16, 2022 00:00:00");
     let diff = endDate.getTime() - now;
 
 
