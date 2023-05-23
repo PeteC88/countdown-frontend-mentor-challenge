@@ -19,7 +19,7 @@ function setEl(type) {
     let h = m * 60;
     let d = h * 24;
 
-    //Check if the countdown is over and reset de countdown to 8 days
+    //Check if the countdown is over and reset de countdown to 1 month
     if (diff < 0) {
         let today = new Date();
          today.setMonth(today.getMonth() + 1);
