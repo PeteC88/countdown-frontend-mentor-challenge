@@ -22,7 +22,7 @@ function setEl(type) {
     //Check if the countdown is over and reset de countdown to 1 month
     if (diff < 0) {
          let today = new Date();
-         today.setMonth(today.getMonth() + 1);
+         today.setMonth(today.getDay() + 7);
          endDate= new Date(today.toLocaleDateString());
          diff = endDate.getTime() - now;
     }
