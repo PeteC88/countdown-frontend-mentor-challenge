@@ -9,7 +9,7 @@ function setEl(type) {
 
     //timer
     let now = new Date().getTime();
-    let endDate = new Date("October 28, 2023 00:00:00");
+    let endDate = new Date("December 31, 2023 00:00:00");
     let diff = endDate.getTime() - now;
 
 
@@ -21,10 +21,11 @@ function setEl(type) {
 
     //Check if the countdown is over and reset de countdown to 1 month
     if (diff < 0) {
-         let today = new Date();
-         today.setMonth(today.getDay() + 7);
+        return
+        /*  let today = new Date();
+         today.setMonth(today.getMonth() + 7);
          endDate= new Date(today.toLocaleDateString());
-         diff = endDate.getTime() - now;
+         diff = endDate.getTime() - now; */
     }
 
     //get seconds, minutes, hours and days
