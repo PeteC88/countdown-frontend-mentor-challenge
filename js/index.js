@@ -22,10 +22,10 @@ function setEl(type) {
     //Check if the countdown is over and reset de countdown to 1 month
     if (diff < 0) {
         return
-     /*    let today = new Date();
+         let today = new Date();
          today.setMonth(today.getMonth() + 1);
          endDate= new Date(today.toLocaleDateString());
-         diff = endDate.getTime() - now; */
+         diff = endDate.getTime() - now;
     }
 
     //get seconds, minutes, hours and days
